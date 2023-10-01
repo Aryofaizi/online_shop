@@ -1,7 +1,7 @@
 # Django Online Shop with Cart
 <i class="fas fa-docker"></i> Docker
 <i class="fab fa-python"></i> Python
-<i class="fab fa-html5"></i> HTML
+<img src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png">
 <i class="fab fa-css3"></i> CSS
 <i class="fab fa-markdown"></i> Markdown
 
@@ -22,21 +22,52 @@ Basic checkout functionality.
 <h5 style="font-size: 36px; font-weight: bold; color: #fff;">Installation and Setup</h5>
 To run this project locally, follow these steps:
 
-Clone the repository: git clone https://github.com/Aryofaizi/online_shop.git
-Navigate to the project directory: cd your-online-shop
-Create a virtual environment: python -m venv venv
+Clone the repository: 
+```
+git clone https://github.com/Aryofaizi/online_shop.git
+
+```
+Navigate to the project directory:
+```
+cd your-online-shop
+```
+Create a virtual environment:
+```
+python -m venv venv
+```
 Activate the virtual environment:
-On Windows: venv\Scripts\activate
-On macOS and Linux: source venv/bin/activate
-Install dependencies: pip install -r requirements.txt
-Apply database migrations: python manage.py migrate
-Create a superuser for admin access: python manage.py createsuperuser
-Start the development server: python manage.py runserver
+On Windows:
+```
+venv\Scripts\activate
+```
+On macOS and Linux:
+```
+source venv/bin/activate
+```
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+Apply database migrations:
+```
+python manage.py migrate
+```
+Create a superuser for admin access:
+```
+python manage.py createsuperuser
+```
+Start the development server:
+```
+python manage.py runserver
+```
 For Docker users, you can also run this project in a Docker container:
 
 bash
 Copy code
-docker-compose up
+
+```
+docker-compose up 
+```
 For more detailed instructions and documentation, please refer to our documentation.
 
 <h5 style="font-size: 36px; font-weight: bold; color: #fff;">Usage</h5>
