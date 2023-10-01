@@ -1,12 +1,11 @@
 # Django Online Shop with Cart
-<i class="material-icons">dock</i> Docker
-<i class="material-icons">code</i> HTML
-<i class="material-icons">style</i> CSS
-<i class="material-icons">description</i> Markdown
+<i class="fas fa-docker"></i> Docker
+<i class="fab fa-python"></i> Python
+<i class="fab fa-html5"></i> HTML
+<i class="fab fa-css3"></i> CSS
+<i class="fab fa-markdown"></i> Markdown
 
 
-
-Your Shop Logo (if you have a logo)
 
 Welcome to the Django Online Shop with Cart project! This project is designed to provide a simple and functional online shopping experience with a primary emphasis on the shopping cart feature.
 
