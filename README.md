@@ -1,7 +1,7 @@
 # Django Online Shop with Cart
 <i class="fas fa-docker"></i> Docker
 <i class="fab fa-python"></i> Python
-<img src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png">
+<img style="width:20px, height:20px," src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png">
 <i class="fab fa-css3"></i> CSS
 <i class="fab fa-markdown"></i> Markdown
 
