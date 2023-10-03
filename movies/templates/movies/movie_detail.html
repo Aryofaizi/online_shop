@@ -1,6 +1,7 @@
 {% extends "_base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load jalali_tags %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/movies_create/style.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/movies_create/colorbox.css' %}" type="text/css" media="all">
@@ -133,7 +134,7 @@
                                                                     <div class="review__meta">
                                                                         <strong class="review__author px-4">{{ comment.user}}</strong>
                                                                         <span class="review__dash">-</span>
-                                                                        <span class="review__published-date">{{comment.datetime_created}}</span>
+                                                                        <span class="review__published-date">{{comment.datetime_created|to_jalali:'%Y/%B/%d _ %H:%M:%S'}}</span>
                                                                     </div>
                                                                     <div class="product-rating">
                                                                         <div class="m-0 star-rating star-five">

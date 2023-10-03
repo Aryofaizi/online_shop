@@ -39,15 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party
+    "crispy_forms",
+    "crispy_bootstrap4",
+    'jalali_date',
+
     # local
     "accounts",
     "pages",
     "movies",
     'cart',
 
-    # third party
-    "crispy_forms",
-    "crispy_bootstrap4",
 ]
 
 MIDDLEWARE = [

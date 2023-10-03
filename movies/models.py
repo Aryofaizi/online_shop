@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 
 class Movie(models.Model):
@@ -26,6 +27,6 @@ class Comment(models.Model):
                               related_name="comment")
     text = models.TextField()
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
     recommend = models.BooleanField(default=False)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Movie, Comment
-
+from jalali_date.admin import ModelAdminJalaliMixin
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
@@ -9,5 +9,5 @@ class MovieAdmin(admin.ModelAdmin):
 
 
 @admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
+class CommentAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ("movie", "user", "datetime_created", "datetime_modified", "text", "recommend")
