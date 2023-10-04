@@ -2,6 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load jalali_tags %}
+{% load persian_digits %}
+{% load humanize %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/movies_create/style.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/movies_create/colorbox.css' %}" type="text/css" media="all">
@@ -38,10 +40,10 @@
                             <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
                                 <h3 class="product-title mb--20"> {{ movie.title }}</h3>
                                 <p class="product-short-description mb--20">
-                                    {{ movie.description}}
+                                    {{ movie.description|safe}}
                                 </p>
                                 <div class="my-5 py-5 product-price-wrapper mb--25">
-                                    <span class="money text-success">{{ movie.price }} تومان</span>
+                                    <span class="money text-success">{{ movie.price|to_persian_digits|intcomma }} تومان</span>
                                     <span class="price-separator">-</span>
                                 </div>
                                 <form action="{% url 'cart_add' movie.id %}" method="post">

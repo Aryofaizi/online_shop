@@ -39,17 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # third party
     "crispy_forms",
     "crispy_bootstrap4",
     'jalali_date',
+    'ckeditor',
 
     # local
     "accounts",
     "pages",
     "movies",
     'cart',
+    'persian_translation.apps.PersianTranslationConfig',
 
 ]
 
@@ -137,6 +140,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
+STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = str(BASE_DIR.joinpath("media"))
@@ -156,3 +160,4 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+

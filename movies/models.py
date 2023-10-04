@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 
 class Movie(models.Model):
@@ -12,8 +13,9 @@ class Movie(models.Model):
     ]
     title = models.CharField(max_length=100)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    description = RichTextField()
+    # price = models.DecimalField(max_digits=5, decimal_places=2)
+    price = models.PositiveIntegerField()
     running_time = models.IntegerField()
     genre = models.CharField(max_length=3, choices=genre_choices)
     cover = models.ImageField(upload_to="covers/")
