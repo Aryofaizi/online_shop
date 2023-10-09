@@ -1,5 +1,8 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
+{% load i18n %}
+{% load humanize %}
+{% load persian_digits %}
 {% block title %}
     Order Create
 {% endblock title %}
@@ -22,7 +25,7 @@
                             {% endif %}
                         </div>
                         <div class="checkout-form">
-                            <form action="" class="form form--checkout">
+                            <form action="{% url 'order_create' %}" class="form form--checkout" method="post">
                                 {% csrf_token %}
                                 <div class="form-row mb--20">
                                     <div class="form__group col-md-6 mb-sm--30">
@@ -79,30 +82,27 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th>محصول شماره یک
-                                            <strong><span>&#10005;</span>۲</strong>
+                                    {% for item in cart %}
+                                        <tr>
+                                        <th>{{ item.movie_obj.title}}
+                                            <strong><span>&#10005;</span>{{item.quantity}}</strong>
                                         </th>
-                                        <td class="text-right">۲۹۶,۰۰۰ تومان</td>
+                                        <td class="text-right">{{item.total_quantity_price|intcomma:False|to_persian_digits}} {% trans '$' %}</td>
                                     </tr>
-                                    <tr>
-                                        <th>محصول شماره دو
-                                            <strong><span>&#10005;</span>۱</strong>
-                                        </th>
-                                        <td class="text-right">۵۸,۰۰۰ تومان</td>
-                                    </tr>
+                                    {% endfor %}
+
                                     </tbody>
                                     <tfoot>
                                     <tr class="cart-subtotal">
                                         <th>مجموع</th>
-                                        <td class="text-right">۳۴۸,۰۰۰ تومان</td>
+                                        <td class="text-right">{{cart.total_price|to_persian_digits|intcomma:False}} {% translate '$' %}</td>
                                     </tr>
                                     </tfoot>
                                 </table>
                             </div>
                             <div class="checkout-payment">
                                 <h2 class="py-5">روش پرداخت</h2>
-                                <form action="#" class="payment-form">
+                                <form action="" class="payment-form" method="post">
                                     <div class="payment-group mb--10">
                                         <div class="payment-radio">
                                             <input type="radio" value="bank" name="payment-method" id="bank" checked>
