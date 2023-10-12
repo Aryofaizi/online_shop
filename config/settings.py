@@ -28,7 +28,7 @@ env.read_env()
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DJANGO_DEBUG")
+DEBUG = env.bool("DOCKER_COMPOSE_DJANGO_DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'cart',
     'persian_translation.apps.PersianTranslationConfig',
     'orders.apps.OrdersConfig',
-
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -170,3 +170,6 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+# merchant id
+
+MERCHANT_ID = env("DJANGO_MERCHANT_ID")

@@ -26,7 +26,8 @@ def order_create_view(request):
                 quantity_total_price = quantity * product.price
                 OrderItem.objects.create(order=order, product=product, quantity=quantity,
                                          quantity_total_price=quantity_total_price)
-                messages.success(request, "your order has been saved")
             cart.clear()
+            request.session["order_id"] = form_obj.id
+            return redirect("payment:payment_process")
 
     return render(request, "orders/order_create.html", context={"form": form})

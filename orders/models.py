@@ -16,9 +16,12 @@ class Order(models.Model):
     datetime_created = models.DateTimeField(verbose_name=_("datetime_created"), auto_now_add=True)
     datetime_modified = models.DateTimeField(verbose_name=_("datetime_modified"), auto_now=True)
 
+    def get_toman_total_price(self):
+        return sum(item.quantity_total_price for item in self.item)
+
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(verbose_name=_("order"), to=Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(verbose_name=_("order"), to=Order, on_delete=models.CASCADE, related_name="item")
     product = models.ForeignKey(verbose_name=_("product"), to=movies.models.Movie, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(verbose_name=_("quantity"))
     quantity_total_price = models.PositiveIntegerField(verbose_name=_("total_quantity_price"))
