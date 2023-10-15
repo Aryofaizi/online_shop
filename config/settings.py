@@ -171,5 +171,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # merchant id
-
 MERCHANT_ID = env("DJANGO_MERCHANT_ID")
+
+
+
